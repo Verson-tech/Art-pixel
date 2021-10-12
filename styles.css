@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(224, 248, 241);
+    background-color: rgb(245, 213, 229);
 }
 
 h1 {
@@ -26,7 +26,7 @@ td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
-}
+  }
 
 tr {
     height: 20px;
@@ -34,6 +34,7 @@ tr {
 
 td {
     width: 20px;
+    background-color: #eef0e4;
 }
 
 input[type=number] {
