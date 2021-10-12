@@ -2,6 +2,8 @@ var clickSubmit = document.querySelector(".check");
 // adding .addEventListener to "submit" button:
 clickSubmit.addEventListener("click",  submitForm)
 
+
+//"submitForm" should be a separate function, because in case .removeEventListener needs to be added it should refer to the same exact "submitForm" function:
 function submitForm(event) {
         event.preventDefault();
         var height = Number(document.getElementsByTagName("input")[0].value);
@@ -64,8 +66,22 @@ function makeGrid() {
 }
 
 
-var colorPicker = document.getElementById('colorPicker');
-var allTdElements = document.getElementsByTagName('td');
+// var colorPicker = document.getElementById('colorPicker');
+// var allTdElements = document.getElementsByTagName('td');
+
+// colorPicker.addEventListener('click', setColor)
+
+// //"setColor" should be a separate function, because in case .removeEventListener needs to be added it should refer to the same exact "setColor" function:
+
+// function setColor(event){
+  
+//     window.alert('you clicked');
+// }
+
+// setColor()
+
+
+
 
 // function updateAll(event) {
 //     document.querySelectorAll("td").forEach(function(td) {
@@ -73,11 +89,3 @@ var allTdElements = document.getElementsByTagName('td');
 //     });
 //   }
 
-
-// function setBackground(){
-//     // for (var i = 0; i < allTdElements.length; i ++){
-//     //     allTdElements.style.color = "red"
-//     // }
-//     console.log(allTdElements)
-// }
-// setBackground()
