@@ -1,10 +1,6 @@
-// var height = document.getElementsByTagName('input')[0];
-
-// var width = document.getElementsByTagName('input')[1];
 var clickSubmit = document.querySelector(".check");
-
+// adding .addEventListener to "submit" button:
 clickSubmit.addEventListener("click",  submitForm)
-
 
 function submitForm(event) {
         event.preventDefault();
@@ -15,7 +11,7 @@ function submitForm(event) {
       
         if (!height || !width) {
           window.alert("Enter a number above zero!!!👀");
-        } else if (height > 35 || width > 35) {
+        } else if (height >= 35 || width >= 35) {
           window.alert(
             "Please, be reasonable with your numbers in order to fit in the window pane!!! Your number should be less then 35."
           );
@@ -25,7 +21,7 @@ function submitForm(event) {
           );
         } else {
               makeGrid();
-              clickSubmit.removeEventListener("click",  submitForm)
+              clickSubmit.removeEventListener("click",  submitForm)       //preventing makeGrid() from adding a new grid to existing grid 
         }
       };
 
@@ -66,3 +62,22 @@ function makeGrid() {
   // sets the border attribut of grid to 2
   grid.setAttribute("border", "1");
 }
+
+
+var colorPicker = document.getElementById('colorPicker');
+var allTdElements = document.getElementsByTagName('td');
+
+// function updateAll(event) {
+//     document.querySelectorAll("td").forEach(function(td) {
+//       td.style.color = event.target.colorPicker;
+//     });
+//   }
+
+
+// function setBackground(){
+//     // for (var i = 0; i < allTdElements.length; i ++){
+//     //     allTdElements.style.color = "red"
+//     // }
+//     console.log(allTdElements)
+// }
+// setBackground()
