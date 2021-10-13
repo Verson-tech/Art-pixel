@@ -1,15 +1,12 @@
-var clickSubmit = document.querySelector(".check");
+const clickSubmit = document.querySelector(".check");
 // adding .addEventListener to "submit" button:
 clickSubmit.addEventListener("click", submitForm);
 
 //"submitForm" should be a separate function, because in case .removeEventListener needs to be added it should refer to the same exact "submitForm" function:
 function submitForm(event) {
   event.preventDefault();
-  var height = Number(document.getElementsByTagName("input")[0].value);
-  var width = Number(document.getElementsByTagName("input")[1].value);
-  console.log(height);
-  console.log(width);
-
+  let height = Number(document.getElementsByTagName("input")[0].value);
+  let width = Number(document.getElementsByTagName("input")[1].value);
   if (!height || !width) {
     window.alert("Enter a number above zero!!!👀");
   } else if (height >= 35 || width >= 35) {
@@ -26,31 +23,30 @@ function submitForm(event) {
   }
 }
 
-var gridBody = document.getElementById('pixelCanvas');
+const gridBody = document.getElementById('pixelCanvas');
 
 function makeGrid() {
-  var body = document.getElementsByTagName("body")[0];
+  let body = document.getElementsByTagName("body")[0];
   // creates a <table> element and a <tbody> element
-  var grid = document.createElement("grid");
-  // var gridBody = document.createElement("gbody");
+  let grid = document.createElement("grid");
   //creating cells
   for (
-    var r = 0;
+    let r = 0;
     r < Number(document.getElementsByTagName("input")[0].value);
     r++
   ) {
     //creates a table row
     var row = document.createElement("tr"); //creates N of row(s)
     for (
-      var c = 0;
+      let c = 0;
       c < Number(document.getElementsByTagName("input")[1].value);
       c++
     ) {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
-      var cell = document.createElement("td"); //creates N of column(s)
-      var cellText = document.createTextNode("");
+      const cell = document.createElement("td"); //creates N of column(s)
+      const cellText = document.createTextNode("");
       cell.appendChild(cellText);
       row.appendChild(cell);
     }
@@ -65,7 +61,6 @@ function makeGrid() {
   grid.setAttribute("border", "1");
 }
 
-
 //add event listener to update the color:
 const picker = document.getElementById('colorPicker')
 let color = picker.value;
@@ -74,8 +69,7 @@ picker.onchange = function() {
   color = this.value;
 }
 
-// function activated when user click on only
-
+// function activated when user click on only one cell
 function respondToClick(event) {
   if (event.target.nodeName.toLowerCase() === 'td') {
     event.target.style.backgroundColor = color;
@@ -84,21 +78,6 @@ function respondToClick(event) {
 
 gridBody.addEventListener("click", respondToClick);
 
-
-// var allTdElements = document.getElementsByTagName("td");
-//test:
-// function getAccess(){
-//   for (var i = 0; i< allTdElements.length; i++){
-//       console.log(allTdElements[i])}};
-
-// function getAccess() {
-//   for (var i = 0; i < allTdElements.length; i++) {
-//     allTdElements[i].addEventListener('click',function(){
-//       console.log(allTdElements[1].style.colorPicker)
-//     })
-//   }
-// }
-// getAccess();
 
 
 
