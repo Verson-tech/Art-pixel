@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     text-align: center;
     background-color: rgb(245, 213, 229);
@@ -42,3 +46,6 @@ td {
 input[type=number] {
     width: 6em;
 }
+
+
+
